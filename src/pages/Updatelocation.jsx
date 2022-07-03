@@ -106,7 +106,7 @@ function Updatelocation() {
               <input
                 type="text"
                 name="pname"
-                class="form-control relative flex-auto min-w-0 block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out mb-3 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                class="form-control relative flex-auto min-w-0 block w-full px-3 py-1.5 text-base font-normal bg-gray-200 bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out mb-3 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                 aria-label="Search"
                 aria-describedby="button-addon2"
                 value={ProductInfo.productName}
@@ -119,9 +119,10 @@ function Updatelocation() {
               <input
                 type="text"
                 name="pid"
-                class="form-control relative flex-auto min-w-0 block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out mb-3 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                class="form-control relative flex-auto min-w-0 block w-full px-3 py-1.5 text-base font-normal bg-gray-200 bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out mb-3 focus:outline-none hover:cursor-default "
                 aria-label="Search"
                 aria-describedby="button-addon2"
+                // disabled={true}
                 value={ProductInfo.productId}
               />
               <label className="text-sm pb-2 font-semibold" htmlFor="">

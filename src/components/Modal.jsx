@@ -1,6 +1,6 @@
 import React from "react";
 
-function Modal({ setIsOpen }) {
+function Modal({ setIsOpen, pid }) {
   return (
     <div
       className="modal fade fixed top-0 left-0 w-full h-full outline-none overflow-x-hidden overflow-y-auto flex items-center justify-center"
@@ -17,7 +17,7 @@ function Modal({ setIsOpen }) {
               className="text-xl font-medium leading-normal text-gray-800"
               id="exampleModalScrollableLabel"
             >
-              Item added Successfully
+              {pid>-1 ? "Item added Successfully" : "Transaction is being processed"}
             </h5>
             <button
               type="button"
@@ -26,13 +26,14 @@ function Modal({ setIsOpen }) {
               aria-label="Close"
             ></button>
           </div>
-          <div className="modal-body relative p-4">
+          <div className="modal-body relative p-4 flex flex-col items-center justify-center">
             <canvas id="canvas"></canvas>
+            {pid > -1 && <p>Product ID : {pid}</p>}
           </div>
           <div className="modal-footer flex flex-shrink-0 flex-wrap items-center justify-end p-4 border-t border-gray-200 rounded-b-md">
             <button
               type="button"
-              className="inline-block px-6 py-2.5 bg-purple-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-purple-700 hover:shadow-lg focus:bg-purple-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-purple-800 active:shadow-lg transition duration-150 ease-in-out"
+              className="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-purple-700 hover:shadow-lg focus:bg-purple-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-purple-800 active:shadow-lg transition duration-150 ease-in-out"
               data-bs-dismiss="modal"
               onClick={() => setIsOpen(false)}
             >

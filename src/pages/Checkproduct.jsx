@@ -42,6 +42,8 @@ function Checkproduct() {
     productId: "",
     date: "",
     states: [],
+    dates: [],
+    fileCid: "",
   });
 
   useEffect(() => {
@@ -102,7 +104,7 @@ function Checkproduct() {
     const date = response.date;
     const states = response.states;
     const dates = response.dates;
-    const fileCid = response.fileCid;
+    const fileCid = response.filecid;
     setProductInfo({
       creator: creator,
       productName: productName,
@@ -136,22 +138,33 @@ function Checkproduct() {
           </div>
           {result && ProductInfo.productName != "" ? (
             <div className="bg-white rounded m-7 flex flex-col justify-center px-7 py-4">
-              <p className="m-1">
+              <div className="m-1">
                 <div className="text-xs text-gray-700"> Product Name</div>
                 <div className="font-semibold text-lg ">
                   {ProductInfo.productName}
                 </div>
-              </p>
-              <p className="m-1">
+              </div>
+              <div className="m-1">
                 <div className="text-xs text-gray-700"> Registered By</div>
                 <div className="font-semibold text-lg">
                   {ProductInfo.creator}
                 </div>
-              </p>
-              <p className="m-1">
+              </div>
+              <div className="m-1">
                 <div className="text-xs text-gray-700"> Manufactured Date</div>
                 <div className="font-semibold text-lg">{ProductInfo.date}</div>
-              </p>
+              </div>
+              {ProductInfo.fileCid && (
+                <div className="m-1">
+                  <div className="text-xs text-gray-700"> Files: </div>
+                  <a
+                    className="text-lg text-blue-700"
+                    href={"https://" + ProductInfo.fileCid + ".ipfs.dweb.link/"}
+                  >
+                    {"https://" + ProductInfo.fileCid + ".ipfs.dweb.link/"}
+                  </a>
+                </div>
+              )}
             </div>
           ) : (
             <div className="bg-white rounded m-7 flex flex-col justify-center px-7 py-4">

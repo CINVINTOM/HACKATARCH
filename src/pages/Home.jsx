@@ -2,7 +2,7 @@ import React from "react";
 
 function Home() {
   return (
-    <div className="h-screen w-screen bg-gray-900 flex items-center justify-center">
+    <div className="h-screen w-screen bg-gray-900 flex flex-col items-center justify-center">
       <div className="font-seri text-white flex flex-col items-center justify-center">
         <a
           href="/"
@@ -28,6 +28,10 @@ function Home() {
         >
           UPDATE LOCATION
         </a>
+      </div>
+      <div className="mt-8 bg-yellow-200 opacity-80 rounded-md p-3">
+        This project requires you to have a metamask or similar wallet connected
+        to Polygon TestNetwork to function as intented.
       </div>
     </div>
   );
